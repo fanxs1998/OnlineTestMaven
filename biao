@@ -1,0 +1,19 @@
+create table students(
+id int not null,
+name varchar(20),
+password varchar(20),
+primary key(id)
+);
+create table scores(
+stu_id int not null,
+stu_name varchar(20),
+score double,
+primary key(stu_id),
+constraint FK_ID foreign key (stu_id) references students(id) on delete cascade
+);
+//on delete cascade 声明了级联删除
+create table admin(
+id int not null,
+password varchar(20),
+primary key(id)
+);
